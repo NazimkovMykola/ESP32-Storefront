@@ -25,9 +25,6 @@ String webBtm = "Україна";
 bool animTop = false; // верхній рядок за замовчуванням статичний
 bool animBtm = true;  // нижній рядок за замовчуванням біжить
 
-// Конвертує UTF-8 рядок (справжня українська кирилиця, як її вводить користувач)
-// у однобайтові коди, які відповідають розкладці нашого fonts.h.
-// Регістр (великі/малі літери) зберігається як є.
 String convertToFontCode(String text) {
   String out = "";
   size_t i = 0;
@@ -118,8 +115,6 @@ void handleGetText() {
 }
 
 void setup() {
-  Serial.begin(115200);
-
   P.begin(2);
   P.setZone(0, 4, 7); // Верхня панель
   P.setZone(1, 0, 3); // Нижня панель
